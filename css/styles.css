@@ -14,6 +14,7 @@
   --bg-icon-footer: rgba(255, 255, 255, 0.1);
   --icon-color: #afb1b8;
   --overplay-technology: rgba(33, 150, 243, 0.9);
+  --bg-modal: rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -774,7 +775,7 @@ body {
   padding: 63px 24px;
 
   position: absolute;
-  top: 0;
+  top: 1px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -818,4 +819,55 @@ body {
   padding-right: 24px;
 }
 
-/*  */
+/* MODAL WINDOU */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-modal);
+
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 528px;
+  height: 581px;
+  padding: 40px;
+
+  background-color: var(--main-white);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.exit-modal-box {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: var(--main-white);
+  cursor: pointer;
+}
